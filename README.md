@@ -30,7 +30,7 @@ CVE の情報は The MITRE Corporation の著作物を含みます。
 }
 ```
 
-各行は `[from, from_inclusive, to, to_inclusive, severity, cve, title, patched_in, id]`。
+各行は `[from, from_inclusive, to, to_inclusive, severity, cve, title, patched_versions, id]`。`patched_versions` は修正版をカンマでつないだもの（系統ごとに出る）。
 `from` / `to` の `*` は「下限なし／上限なし」。バージョンの比較は使う側で行います。
 
 ## 手で動かす

@@ -11,7 +11,7 @@
   "bucket": "07",
   "items": {
     "plugin:contact-form-7": [
-      # [from, from_inc, to, to_inc, severity, cve, title, patched_in, wf_id]
+      # [from, from_inc, to, to_inc, severity, cve, title, patched_versions（カンマ区切り）, wf_id]
       ["*", 1, "5.3.1", 1, "high", "CVE-2020-35489", "...", "5.3.2", "abcd..."]
     ],
     "theme:twentytwenty": [...],
@@ -91,8 +91,10 @@ def build(feed):
                 continue
             if typ == "core":
                 slug = "wordpress"
-            patched = sw.get("patched_versions") or []
-            patched_in = s(patched[0], 40) if patched else ""
+            # 修正版は全部（系統ごとに出る＝例 4.7.38, 6.8.11, 7.1.3）をカンマでつなぐ。
+            # 🔴 どれを案内するかは使う側が「照合した版より新しい中でいちばん近いもの」を選ぶ（先頭だけを使わない）。
+            patched = [s(v, 40) for v in (sw.get("patched_versions") or []) if s(v, 40)]
+            patched_in = ",".join(patched[:40])
             for rng in (sw.get("affected_versions") or {}).values():
                 if not isinstance(rng, dict):
                     continue
