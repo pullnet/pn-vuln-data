@@ -1,0 +1,59 @@
+name: 脆弱性の索引を作る（毎日）
+
+# Wordfence Intelligence のフィードを取得し、ミツクルの診断で使う小さな索引（b/00〜31.json.gz と index.meta.json）に縮めて、
+# `data` ブランチへ置く。ミツクル（Xserver）は1日1回だけ raw の URL から取りに行く。
+#
+# 🔴 data ブランチは毎回「1コミットだけ」に作り直して force-push する（履歴を貯めない＝リポジトリが膨らまない）。
+# 🔴 取得や変換に失敗したときは data ブランチに触らない（前日の索引がそのまま残る）。
+# ⚠️ Secrets に WORDFENCE_API_KEY が必要（Wordfence.com のアカウント → Integrations で作る無料のキー）。
+
+on:
+  schedule:
+    - cron: '17 18 * * *'   # 毎日 03:17（日本時間）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: build-index
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: フィードを取得して索引を作る
+        env:
+          WORDFENCE_API_KEY: ${{ secrets.WORDFENCE_API_KEY }}
+        run: python build_index.py "" out
+
+      - name: data ブランチへ置く（1コミットだけ）
+        run: |
+          cd out
+          git init -q
+          git checkout -q -b data
+          cp ../README.md ./README.md
+          git add b index.meta.json README.md
+          git -c user.name="pn-vuln-data bot" -c user.email="actions@github.com" \
+            commit -q -m "index $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" data
+
+      - name: 失敗したら Issue を立てる
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `脆弱性の索引の作成に失敗（${new Date().toISOString().slice(0, 10)}）`,
+              body: `run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}\n前日の索引はそのまま残っています。`,
+            });
