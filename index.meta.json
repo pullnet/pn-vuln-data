@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "generated_at": "2026-11-27T18:24:27Z",
+  "buckets_count": 32,
+  "attribution": {
+    "source": "Wordfence Intelligence (Defiant, Inc.)",
+    "source_url": "https://www.wordfence.com/threat-intel/vulnerabilities/",
+    "license_url": "https://www.wordfence.com/wordfence-intelligence-terms-and-conditions/",
+    "cve_notice": "CVE: Copyright The MITRE Corporation",
+    "cve_terms_url": "https://www.cve.org/Legal/TermsOfUse"
+  },
+  "records_in_feed": 45263,
+  "records_skipped": 121,
+  "software": 18885,
+  "ranges": 52687,
+  "buckets": {
+    "00": {
+      "sha256": "de4c0cf72e88e1427440f59a7d3b3111f88f83d4419d8a41f78eb4e103211383",
+      "bytes": 83665
+    },
+    "01": {
+      "sha256": "b0ada9698995e45f5e4d6e55432b82449b72ad55697a2c260f1d4718ce2033cd",
+      "bytes": 85561
+    },
+    "02": {
+      "sha256": "471981eb69cdc7716355b98673ec1a864115b7f8269e7b19cd081b1c30ec977a",
+      "bytes": 81714
+    },
+    "03": {
+      "sha256": "14d5996804ba05b27b0b7342d8ecfec91185a09dfe83920ec29047c8cdf3aa43",
+      "bytes": 76850
+    },
+    "04": {
+      "sha256": "a183c42a4cc1dbd95a6d7b5630e8984ab3ba868438f8e7821a94b3c10b237c90",
+      "bytes": 77668
+    },
+    "05": {
+      "sha256": "b5b220852eda80e1fd971d8af1e3468dc24f934626514a6980a44108d40007dc",
+      "bytes": 83776
+    },
+    "06": {
+      "sha256": "79c8d261adfdb2733494c3faeb1b954036a9ed4311745dac23c33d8f509c1fd3",
+      "bytes": 76602
+    },
+    "07": {
+      "sha256": "6d50759150256f1cb951ae8bbb9662fdee45b3d1849bcab98b2b3847cadce409",
+      "bytes": 83038
+    },
+    "08": {
+      "sha256": "faf0402215cb6698d7f2ef54c31937b4847108281070c584a3ea6e881b98ea44",
+      "bytes": 78342
+    },
+    "09": {
+      "sha256": "78f7c4bb6c6b36e7c6385b89e85d058ead152dc5764c72169dd397bb991b080a",
+      "bytes": 80328
+    },
+    "10": {
+      "sha256": "c555cbb45ef947720cfda9f3baba6f1315114a4682ce2c146ccf368529d0ca52",
+      "bytes": 76682
+    },
+    "11": {
+      "sha256": "4dae05181572e5f228aac43fb50eea2493ff87965132c2479b4ca014c04b3af6",
+      "bytes": 94404
+    },
+    "12": {
+      "sha256": "b6863b5a066321b145a3102dee0fec4cb5565bfd1c61b589938c5087a6099a26",
+      "bytes": 75306
+    },
+    "13": {
+      "sha256": "ce000ef89087ca5f57413386a380e55f44da6abb4685d93bc6ff04b4d76b42e0",
+      "bytes": 86193
+    },
+    "14": {
+      "sha256": "017480fd7db22c90df2b3618284f3217a36d9a28bddbe062792c266b8939091a",
+      "bytes": 73901
+    },
+    "15": {
+      "sha256": "c8bd743f84350e5a6382ac0a859bbd2b9ffb239eb2924c715494611640f4ea65",
+      "bytes": 93563
+    },
+    "16": {
+      "sha256": "f6a3b1acb7d6b51feeada2e9e1f1ecae9e8a5a331b6bee47de6290028d7f9e1b",
+      "bytes": 85195
+    },
+    "17": {
+      "sha256": "4345d3447d75aad47b6e2472afc18e6f2d3fa08d747b8f289f91078440c6a28f",
+      "bytes": 80842
+    },
+    "18": {
+      "sha256": "b5971a5c5275433e7a678ff9f3f4bff8ece4b5d831508502c6c9996509fa524f",
+      "bytes": 87795
+    },
+    "19": {
+      "sha256": "fd66122fc714bb1a0a96ad291e417928e34f9c4f3915ea474cbdd4965c1e2d60",
+      "bytes": 80970
+    },
+    "20": {
+      "sha256": "a3e456bcadb0286d0732951ab4339e8c60fb7a586a78f8699969b4147d120444",
+      "bytes": 72538
+    },
+    "21": {
+      "sha256": "7de2aecbcf055821460ffe637b35c3fe67f7d95aea52e3c32fc5bf7ad10305ab",
+      "bytes": 209375
+    },
+    "22": {
+      "sha256": "eacfd006db27c7128ebf268f64b76e95bf28206a466b7af8c78496357a931a54",
+      "bytes": 71221
+    },
+    "23": {
+      "sha256": "715cd207bcc137cc3b93f9ef57d9d489fd3d22b298800b74eb51efb612ff9688",
+      "bytes": 75710
+    },
+    "24": {
+      "sha256": "61ee3b4d4eb69c768cee8877ba77a83f2835364140dcec3051873647ecfca9a6",
+      "bytes": 78548
+    },
+    "25": {
+      "sha256": "40c6bdca09e820eccc5e55cb3371d20c29c8c75fb1f90aa45dcf7925469c3517",
+      "bytes": 80870
+    },
+    "26": {
+      "sha256": "00f14912b30bebd35708a6030887608eb76c80fec6e90daf3efae950d24b38f2",
+      "bytes": 76733
+    },
+    "27": {
+      "sha256": "1280c914fdccb492ea4bbacef7d9cac7d1a1d472511c8d88b889fbbb951e2b63",
+      "bytes": 98662
+    },
+    "28": {
+      "sha256": "fe003f40f9d3b2295914e5124957b1296e5c0958abcecc1806458962b7e1f910",
+      "bytes": 75972
+    },
+    "29": {
+      "sha256": "ff4a0a9e78e089ef36f946fd11a30818389f5351d0e534e11437538b5122653b",
+      "bytes": 83178
+    },
+    "30": {
+      "sha256": "efe40e31cba3cbff5f36244b2d10cb22ab47f4ea78928269981a2b0a0fe9c97c",
+      "bytes": 78984
+    },
+    "31": {
+      "sha256": "dae2565787dfa303a6606d6f2f0dd54f9f5f920b0dd4af9eef9f84bddd9db36e",
+      "bytes": 71374
+    }
+  }
+}
